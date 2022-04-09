@@ -1,0 +1,5 @@
+1. task1 - mundemi me lecu te dhena nga javascripti he permes tyre me kriju permbajtje  ne html
+//student ---->html(bootstrap)
+2. task -- puna me web forma / leximi dhe validimi i te dhenave.
+3.Task -- puna me api-s  async/await.
+4.Task ---- sugjeriim

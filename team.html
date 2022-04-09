@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Javascript| Our team</title>
+<link
+ rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&family=Grape+Nuts&family=Poppins:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300&family=Roboto:ital,wght@1,100&display=swap');
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+
+    }
+    body {
+        background-color: #c5dac1;
+    }
+    .section{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        width: 960px;
+        margin: 0px auto;
+    }
+    h1 {
+        color: #898980;
+        text-align: center;
+        font-size: 78px;
+        font-family: 'Grape Nuts', cursive;
+
+    }
+    .team {
+        width: 100%;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+   .member {
+       background-color: white;
+       padding: 25;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       align-items: center;
+
+   }
+   h3 {
+       line-height: 50px;
+   }
+
+
+    img {
+        width: 400px;
+    }
+    ul {
+        width: 100%;
+        margin-top: 15px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+    li {
+        margin: 0px 8px;
+    }
+   
+
+    
+    h3,p,a {
+        color: #898980;
+    }
+
+</style>
+</head>
+<body>
+    <section >
+        <div class="container">
+        <h1>Our team </h1>
+        <div class="team">
+            </div>
+        </div>
+    </section>
+     <script>
+         const team = [ 
+             {
+                         
+            image: "menager.jpeg",
+            name: "Maria Teth",
+            role: "Menager",
+            social: [
+                 {
+                    icon : `<i class="fa-brands fa-facebook"></i>`,
+                    link :"https://facebook.com/mariateth"
+                } ,
+                { 
+                    icon :`<i class="fa-brands fa-twitter"></i>`,
+                    link:"https://twiter.com/mariaaa"
+                }
+            ]
+            
+         },
+        {
+            image: "asistant.jpeg",
+            name: "Erlina Hoxha",
+            role: "Asistant",
+            social: [ {
+                    icon : `<i class="fa-brands fa-facebook"></i>`,
+                    link :"https://facebook.com/erlinahoo"
+                } ,
+                { 
+                    icon :`<i class="fa-brands fa-twitter"></i>`,
+                    link:"https://twiter.com/erlinaa"
+                }]
+
+        } ,
+    {
+        image: "leader.jpeg",
+            name: "Mitat Sejdiu",
+            role: "leader",
+            social: 
+                [ {
+                    icon : `<i class="fa-brands fa-facebook"></i>`,
+                    link :"https://facebook.com/mitatsejdiu"
+                } ,
+                { 
+                    icon :`<i class="fa-brands fa-twitter"></i>`,
+                    link:"https://twiter.com/mitatiiiis"
+                }]
+
+    }]
+    
+
+     const team_container = document.querySelector(".team");
+     let html = "";
+     team.forEach((member) => {
+         let social = "";
+         member.social.forEach(
+             (link) =>
+             (social +=`<li> <a href =" ${link.link}">
+                ${link.icon}
+                </a> </li>`)
+         );
+         html += `
+         <div class="member">
+                <img src="images/${member.image}" alt="${member.name}">
+                <h3> ${member.name}</h3>
+                <p>${member.role}</p>
+                <ul> 
+                    ${social}
+                </ul>
+            </div>
+
+         
+         `;
+     });
+     team_container.innerHTML= html;
+        
+     </script>
+</body>
+</html>
